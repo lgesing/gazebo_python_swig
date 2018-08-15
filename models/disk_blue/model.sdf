@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="disk_blue">
+    <static>false</static>
+    <link name="blue">
+      <gravity>0</gravity>
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+              <radius>0.1</radius>
+              <length>.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+          <ambient>1 1 1 1</ambient>        
+        </material>
+        <cast_shadows>0</cast_shadows>
+        <transparency>0</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>

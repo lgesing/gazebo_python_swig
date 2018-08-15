@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+ <world name='default'> 
+  <!-- Global Light Source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+  
+  <include>
+      <uri>model://ground_plane</uri>
+   </include>
+
+   <include>
+      <uri>model://room_closed_10m_10m_single_obstacle</uri>
+   </include>  
+
+   <include>
+      <uri>model://disk_blue</uri>
+   </include>  
+
+   <include>
+      <uri>model://disk_green</uri>
+   </include>  
+
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size> <!-- specifies the time duration in seconds of each physics update step. -->
+      <real_time_factor>0</real_time_factor> <!-- product of real time update rate and max step size represents the target real time factor -->
+      <real_time_update_rate>0</real_time_update_rate> <!-- specifies in Hz the number of physics updates that will be attempted per second. If this number is set to zero, it will run as fast as it can. -->
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-7.0 0.0 40.0 0.0 1.5707963 1.5707963</pose><!-- x y z roll pitch yaw -->
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
+<plugin filename="libgazebo_plugin_world_step.so" name="gazebo_plugin_world_step"/>
+
+<plugin  name="libcollision_map_creator" filename="libcollision_map_creator.so"/>
+
+
+
+   </world>
+</sdf>
